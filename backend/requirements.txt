@@ -1,0 +1,8 @@
+flask
+flask-cors
+llama-index
+llama-index-vector-stores-qdrant
+qdrant-client
+python-dotenv
+gunicorn
+openai

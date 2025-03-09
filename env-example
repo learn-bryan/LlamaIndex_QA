@@ -1,0 +1,3 @@
+# Copy this example to .env
+
+OPENAI_API_KEY=you-api-key

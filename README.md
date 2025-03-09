@@ -26,31 +26,42 @@ The application consists of two main components:
 - React
 - Fetch API for backend communication
 
-## Project Structure
+### Vector Store
+- QDRant
 
+## Project Structure
 ```
-llamaindex-web-app/
-├── flask_backend/
-│   ├── documents/        # Directory for storing uploaded documents
-│   ├── .index/           # Directory for storing the vector index
-│   ├── flask_demo.py     # Main Flask API server
-│   ├── index_server.py   # Server for handling index operations
-│   ├── requirements.txt  # Python dependencies
-│   └── Dockerfile        # For containerizing the backend
-├── react_frontend/
+llamaindex-qdrant-app/
+├── docker-compose.yml
+├── .env
+├── .gitignore
+├── README.md
+├── backend/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── app.py
+│   ├── index_service.py
+│   ├── temp_documents/
+│   └── utils/
+│       ├── __init__.py
+│       └── document_processor.py
+├── frontend/
+│   ├── Dockerfile
+│   ├── package.json
 │   ├── public/
 │   ├── src/
-│   │   ├── apis/         # API client code for communicating with backend
-│   │   │   ├── fetchDocuments.tsx
-│   │   │   ├── insertDocument.tsx
-│   │   │   └── queryIndex.tsx
-│   │   ├── components/   # React components
 │   │   ├── App.tsx
-│   │   └── ...
-│   ├── package.json
+│   │   ├── index.tsx
+│   │   ├── components/
+│   │   │   ├── DocumentUpload.tsx
+│   │   │   ├── QueryInterface.tsx
+│   │   │   └── DocumentList.tsx
+│   │   └── apis/
+│   │       ├── documentApi.ts
+│   │       └── queryApi.ts
 │   └── tsconfig.json
-├── .gitignore
-└── README.md
+└── qdrant/
+    └── data/
 ```
 
 ## Setup and Installation

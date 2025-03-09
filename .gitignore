@@ -1,54 +1,12 @@
-# Python
+# Dependencies
+node_modules/
+/frontend/node_modules/
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
 .Python
 env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
 venv/
-.env
-
-# Flask
-instance/
-.webassets-cache
-
-# React/Node
-node_modules/
-/react_frontend/coverage/
-/react_frontend/build/
-.DS_Store
+ENV/
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# LlamaIndex specific
-.index/
-documents/*
-!documents/.gitkeep
-
-# Editors
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OpenAI
-.openai_api_key
+.env

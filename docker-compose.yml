@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: qa_backend
+    build: ./backend
+    ports:
+      - "5601:5601"
+    volumes:
+      - ./backend/temp_documents:/app/temp_documents
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+    depends_on:
+      - qdrant
+    restart: unless-stopped
+
+  frontend:
+    container_name: qa_frontend
+    build: ./frontend
+    ports:
+      - "5000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qa_vectordb
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant/data:/qdrant/storage
+    restart: unless-stopped
